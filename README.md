@@ -4,7 +4,7 @@ The shift register, which allows parallel input (data is given separately to eac
 ![image](https://github.com/RESMIRNAIR/PISO_SR/assets/154305926/f0f2d979-b298-4693-b5c8-8eea850936d4)
 
 # PROGRAM:
-
+~~~
 library IEEE;
 
 use IEEE.STD_LOGIC_1164.ALL;
@@ -54,6 +54,6 @@ end if;
 end process;
 
 end Behavioral;
-
+~~~
 
 # OUTPUT:
