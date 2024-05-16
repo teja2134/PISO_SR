@@ -4,32 +4,56 @@ The shift register, which allows parallel input (data is given separately to eac
 ![image](https://github.com/RESMIRNAIR/PISO_SR/assets/154305926/f0f2d979-b298-4693-b5c8-8eea850936d4)
 
 # PROGRAM:
+
 library IEEE;
+
 use IEEE.STD_LOGIC_1164.ALL;
+
 use IEEE.STD_LOGIC_ARITH.ALL;
+
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity piso is
+
  Port (clk,rst,load:in std_logic; 
+ 
        p_data: in std_logic_vector(3 downto 0);
+       
        s_out : out std_logic);
+
 end piso;
 
+
 architecture Behavioral of piso is
+
 signal temp_reg: std_logic_vector(3 downto 0):=(others=>'0');
+
 begin
+
 process(clk,rst)
+
 begin
+
 if rst='1' then 
+
    temp_reg<=(others=>'0');
+
 elsif rising_edge(clk) then 
 
       if load ='1' then 
+      
           temp_reg<=p_data;
       else
+          
           temp_reg <= temp_reg(2 downto 0) & '0';
 
       end if;
+
 end if;
+
 end process;
+
 end Behavioral;
+
+
+# OUTPUT:
